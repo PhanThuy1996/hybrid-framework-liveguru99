@@ -14,6 +14,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import PageObjects.UserMyDashBoardPageObject;
+import PageUIs.FontEnd_PageUI_HomePage;
+
 public class BasePage {
 	private long longTimeOut = GlobalConstants.LONG_TIMEOUT;
 
@@ -399,5 +402,17 @@ public class BasePage {
 
 	public boolean isElementDisplayed(WebDriver driver, String xpathLocator, String... paramValues) {
 		return getWebElement(driver, getDynamicLocator(xpathLocator, paramValues)).isDisplayed();
+	}
+	
+	public void clickAccountMenu(WebDriver driver) {
+		waitForElementVisible(driver, FontEnd_PageUI_HomePage.ACCOUNT_IN_MENU_LINK);
+		clickToElement(driver, FontEnd_PageUI_HomePage.ACCOUNT_IN_MENU_LINK);
+		
+	}
+	
+	public UserMyDashBoardPageObject openUserMyDashBoardPage(WebDriver driver) {
+		waitForElementVisible(driver, FontEnd_PageUI_HomePage.DYNAMIC_MENU_LINK,"My Account");
+		clickToElement(driver, FontEnd_PageUI_HomePage.DYNAMIC_MENU_LINK,"My Account");
+		return PageGeneratorManager.getMyDashBoardHomePage(driver);
 	}
 }

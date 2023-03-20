@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="LiveGuru">
+
+  <test name="Run on Chrome">
+ 	 <parameter name ="browser" value ="chrome" />
+	  	<classes>
+			 <class name="com.liveguru99.fontend.FontEnd_Register"/>   
+	    </classes>
+   </test>
+    
+</suite>

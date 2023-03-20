@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [LiveGuru]">
+  <test thread-count="5" name="Run on Chrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.liveguru99.fontend.FontEnd_Register">
+        <methods>
+          <include name="Register_02_Verify_User_Information"/>
+          <include name="BeforeClass"/>
+        </methods>
+      </class> <!-- com.liveguru99.fontend.FontEnd_Register -->
+    </classes>
+  </test> <!-- Run on Chrome(failed) -->
+</suite> <!-- Failed suite [LiveGuru] -->

@@ -16,7 +16,7 @@ public class BaseTest {
 	private WebDriver driver;
 	// private String projectPath = System.getProperty("user.dir");
 
-	protected WebDriver getBrowserDriver(String browserName,String url) {
+	protected WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		if (browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -62,7 +62,6 @@ public class BaseTest {
 			throw new RuntimeException("Please input with correct browser name. ");
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(url);
 		return driver;
 
 	}
